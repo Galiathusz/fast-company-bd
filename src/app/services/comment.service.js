@@ -18,8 +18,8 @@ const commentService = {
         });
         return data;
     },
-    removeComment: async (commentId) => {
-        const { data } = await httpService.delete(commentEndpoint + commentId);
+    removeComment: async (payload) => {
+        const { data } = await httpService.delete(commentEndpoint + payload);
         return data;
     }
 };
