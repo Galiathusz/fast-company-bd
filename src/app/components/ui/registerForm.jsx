@@ -6,9 +6,9 @@ import RadioField from "../common/form/radioField";
 import MultiSelectField from "../common/form/multiSelectField";
 import CheckBoxField from "../common/form/checkBoxField";
 import { useDispatch, useSelector } from "react-redux";
-import { useAuth } from "../../hooks/useAuth";
 import { getQualities } from "../../store/qualities";
 import { getProfessions } from "../../store/professions";
+import { signUp } from "../../store/users";
 
 const RegisterForm = () => {
     const [data, setData] = useState({
@@ -20,7 +20,7 @@ const RegisterForm = () => {
         qualities: [],
         licence: false
     });
-    const { signUp } = useAuth();
+
     const dispatch = useDispatch();
     const qualities = useSelector(getQualities());
     const qulaitiesList = qualities.map(q => ({ label: q.name, value: q._id }));
